@@ -21,7 +21,7 @@ const Services = () => {
     {
       title: 'Orthodontics',
       description: 'Braces and aligners to straighten teeth and correct bite issues for a perfect smile.',
-      icon: '🦷'
+      icon: '😁'
     },
     {
       title: 'Dental Implants',

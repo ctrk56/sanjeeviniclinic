@@ -8,6 +8,7 @@ const Contact = () => {
     phone: '',
     message: ''
   });
+  const [showSuccess, setShowSuccess] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
@@ -19,8 +20,13 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // In a real application, this would send data to a backend
-    alert('Thank you for your message! We will get back to you soon.');
+    setShowSuccess(true);
     setFormData({ name: '', email: '', phone: '', message: '' });
+    
+    // Hide success message after 5 seconds
+    setTimeout(() => {
+      setShowSuccess(false);
+    }, 5000);
   };
 
   return (
@@ -67,6 +73,11 @@ const Contact = () => {
           </div>
           <div className="contact-form">
             <h3>Send us a Message</h3>
+            {showSuccess && (
+              <div className="success-message">
+                Thank you for your message! We will get back to you soon.
+              </div>
+            )}
             <form onSubmit={handleSubmit}>
               <div className="form-group">
                 <label htmlFor="name">Name</label>

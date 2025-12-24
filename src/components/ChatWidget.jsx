@@ -70,6 +70,10 @@ const ChatWidget = () => {
               title="Sri Sanjeevini Dental Assistant"
               className="chat-iframe"
               allow="microphone"
+              sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+              referrerPolicy="strict-origin-when-cross-origin"
+              loading="lazy"
+              tabIndex="0"
             />
           </div>
         </div>
